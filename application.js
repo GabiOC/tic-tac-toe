@@ -60,7 +60,7 @@ function gameOver(){
 	}
 	
 	else if(kittyNumMoves + puppyNumMoves == 9){ // if max number of moves is reached and no winner, game is a draw
-		confirmNewGame = alert("Draw! Want to play again?");
+		confirmNewGame = confirm("Draw! Want to play again?");
 	}
 	
 	// reset game
