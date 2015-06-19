@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Tic Tac Toe</title>
+	<title>Kit-Pup-Toe</title>
 	<meta charset=utf-8>
 	<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
@@ -10,14 +10,20 @@
 </head>
 
 	<header>
-		<h1>Tic Tac Toe</h1>
-		<h3>Beat your opponent!</h2>
+		<h1>Kit-Pup-Toe</h1>
+		<h3>The eternal (and cutest) battle! Who will win?</h2>
 	</header>
 	
 	<div class="grid">
-		<div class="grid_sq" points="1"></div><div class="grid_sq" points="2"></div><div class="grid_sq" points="4"></div>
-		<div class="grid_sq" points="8"></div><div class="grid_sq" points="16"></div><div class="grid_sq" points="32"></div>
-		<div class="grid_sq" points="64"></div><div class="grid_sq" points="128"></div><div class="grid_sq" points="256"></div>
+		<!-- A bitboard is used to represent the game board state. Each grid (or position on the board) is
+		assigned a bit (binary/base two, i.e. 2^0 = 1; 2^1 = 2; 2^2 = 4, etc). When each player selects a grid square,
+		its position is added to his/her bitboard. To determine the winner, we create a bitboard (represented as an array)
+		of the winning combinations by summing the bits horizontally, vertically and diagonally, and perform a bitwise
+		'and' operation to compare the player's moves/bitboard vs. the winning combos. If the player's moves equal one of the winning combos,
+		he/she is the winner. -->
+		<div class="grid_sq" id="1"></div><div class="grid_sq" id="2"></div><div class="grid_sq" id="4"></div>
+		<div class="grid_sq" id="8"></div><div class="grid_sq" id="16"></div><div class="grid_sq" id="32"></div>
+		<div class="grid_sq" id="64"></div><div class="grid_sq" id="128"></div><div class="grid_sq" id="256"></div>
 	</div>
 </html>
 

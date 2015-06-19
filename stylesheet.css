@@ -1,7 +1,7 @@
 * {
-	background-color: ;
+	background-color: white;
 	font-family: 'Lato', sans-serif;
-	color: black;
+	color: #320f0f;
 	text-align: center;
 	text-decoration: none;
 	margin: 8px;
@@ -14,12 +14,12 @@
 	font-size: 0;
 	line-height: 0;
 	overflow: hidden;
-	padding: 0px;
+	padding: 10px;
 }
 
 .grid_sq {
 	display: inline-block;
-	background-color: #404040;
+	background-color: #F3CF0F;
 	padding: 0;
 	margin: 0;
 	overflow: hidden;
