@@ -8,6 +8,7 @@ var currentPlayer = kitty;
 var kittyMoves = 0; var puppyMoves = 0; // store which grids clicked
 var kittyNumMoves = 0; var puppyNumMoves = 0; // store # of moves per player
 var confirmNewGame;
+var winner;
 
 function play(){
 	$(".grid").find(".grid_sq").on("click", function(){
@@ -47,6 +48,7 @@ function gameOver(){
 		for(var i = 0; i < winCombos.length; i++){
 			if((winCombos[i] & kittyMoves) === winCombos[i]){ // use bitwise 'and' operator to check if the player's moves equal a winning combo
 				confirmNewGame = confirm("Kitties are the winner! Want to play again?");
+				winner = true;
 			}
 		}
 	}
@@ -55,11 +57,12 @@ function gameOver(){
 		for(var i = 0; i < winCombos.length; i++){
 			if((winCombos[i] & puppyMoves) === winCombos[i]){
 				confirmNewGame = confirm("Puppies are the winner! Want to play again?");
+				winner = true;
 			}
 		}
 	}
 	
-	else if(kittyNumMoves + puppyNumMoves == 9){ // if max number of moves is reached and no winner, game is a draw
+	else if(kittyNumMoves + puppyNumMoves == 9 && winner != true){ // if max number of moves is reached and no winner, game is a draw
 		confirmNewGame = confirm("Draw! Want to play again?");
 	}
 	
