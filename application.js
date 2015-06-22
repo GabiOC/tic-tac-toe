@@ -52,7 +52,7 @@ function gameOver(){
 		}
 	}
 
-	if(currentPlayer == puppy && puppyNumMoves >= 3){
+	else if(currentPlayer == puppy && puppyNumMoves >= 3){
 		for(var i = 0; i < winCombos.length; i++){
 			if((winCombos[i] & puppyMoves) === winCombos[i]){
 				confirmNewGame = confirm("Puppies are the winner! Want to play again?");
