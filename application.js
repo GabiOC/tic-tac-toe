@@ -2,7 +2,6 @@ $(document).ready(function(){
 	play();
 });
 
-var numMoves = 0;
 var kitty = "kitty"; var puppy = "puppy";
 var currentPlayer = kitty;
 var kittyMoves = 0; var puppyMoves = 0; // store which grids clicked
